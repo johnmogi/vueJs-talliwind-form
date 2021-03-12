@@ -1,3 +1,7 @@
+'use strict';
+
+import fs from 'fs';
+
 const sendBut = document.getElementById('subBut');
 const fName = document.getElementById('first_name');
 const lName = document.getElementById('last_name');
@@ -11,7 +15,7 @@ subBut.addEventListener("click", function (event) {
   sendData = []; // resets the send array.
   const arr = [fName, lName, eMail];
   validate(arr);
-  validForm ? console.log('success', sendData) : null;
+  validForm ? writeOutput(sendData) : null;
 });
 
 function validate(arr) {
@@ -35,3 +39,7 @@ function validate(arr) {
   }
 }
 
+function writeOutput(data){
+ JSON.stringify(data);
+ fs.writeFileSync('data.json', data);
+}
