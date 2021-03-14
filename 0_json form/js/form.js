@@ -1,10 +1,6 @@
-'use strict';
-
-import fs from 'fs';
-
 const sendBut = document.getElementById('subBut');
 const fName = document.getElementById('first_name');
-const lName = document.getElementById('last_name');
+const lName = document.getElementById('phone');
 const eMail = document.getElementById('email_address');
 
 let sendData = []
@@ -20,7 +16,7 @@ subBut.addEventListener("click", function (event) {
 
 function validate(arr) {
   for (let i = 0; i < arr.length; i++) {
-    let lead = { "firstName": arr[0].value, "lastName": arr[1].value, "mail": arr[2].value }
+    let lead = { "name": arr[0].value, "phone": arr[1].value, "mail": arr[2].value }
 
     if (!arr[i].value) {
       // console.log('empty field : ', arr[i].name); //could write a user warning here...
@@ -39,7 +35,18 @@ function validate(arr) {
   }
 }
 
-function writeOutput(data){
- JSON.stringify(data);
- fs.writeFileSync('data.json', data);
+function writeOutput(dataSend){
+
+  axios({
+    method: 'post',
+    withCredentials: true,
+    headers: {
+      'Content-Type': 'application/json',
+  },
+    url: 'http://localhost:3000/api/contacts',
+    data: {
+      dataSend
+    }
+  });
+
 }

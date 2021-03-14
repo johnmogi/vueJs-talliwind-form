@@ -1,12 +1,10 @@
 const Joi = require("joi");
 
 class ContactModel {
-  constructor(id, name, mail, phone, address) {
-    this.id = id;
+  constructor(name, mail, phone) {
     this.name = name;
     this.mail = mail;
     this.phone = phone;
-    this.address = address;
   }
 
 //   static validate(contact) {

@@ -20,3 +20,10 @@ document.getElementById('id').classList.remove('class');
 And to toggle a class (remove if exists else add it):
 
 document.getElementById('id').classList.toggle('class');
+
+axios instead of xmlhttp / ajax fetch:
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+(installed locally)
+
+
+

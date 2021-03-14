@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>simple vueJs form with taliiwind</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+   <script src="./js/axios.min.js"></script>
     <link href="./css/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/custom.css">
 </head>
@@ -169,13 +170,13 @@
             <div class="px-4 py-5 bg-white sm:p-6">
               <div class="grid grid-cols-6 gap-6">
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="first_name" class="block text-sm font-medium text-gray-700">First name</label>
+                  <label for="first_name" class="block text-sm font-medium text-gray-700">First name: </label>
                   <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
   
                 <div class="col-span-6 sm:col-span-3">
-                  <label for="last_name" class="block text-sm font-medium text-gray-700">Last name</label>
-                  <input type="text" name="last_name" id="last_name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  <label for="phone" class="block text-sm font-medium text-gray-700">Phone number: </label>
+                  <input type="text" name="phone" id="phone" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                 </div>
   
                 <div class="col-span-6 sm:col-span-4">

@@ -16,12 +16,11 @@ router.get("/", async (request, response) => {
     }
 });
 
-
 // POST http://localhost:3000/api/contacts
 router.post("/", async (request, response) => {
     try {
         const contact = request.body;
-        if(!contact.id || !contact.name ||!contact.mail ||!contact.phone || !contact.address){
+        if(!contact.name ||!contact.mail ||!contact.phone ){
             response.status(401).send("missing a field, try again")
             throw("missing a field, try again")
         }
